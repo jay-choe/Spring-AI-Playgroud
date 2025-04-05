@@ -1,4 +1,4 @@
-package com.shortener.playground
+package com.playground.playground
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
