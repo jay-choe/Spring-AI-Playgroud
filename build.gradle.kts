@@ -16,6 +16,7 @@ java {
 
 repositories {
     mavenCentral()
+    maven(url="https://repo.spring.io/snapshot")
 }
 
 dependencies {
@@ -24,6 +25,9 @@ dependencies {
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
     implementation("org.apache.pdfbox:pdfbox:2.0.27")
+    implementation(platform("org.springframework.ai:spring-ai-bom:1.0.0-SNAPSHOT"))
+    implementation("org.springframework.ai:spring-ai-starter-model-openai")
+
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     testImplementation("org.jetbrains.kotlin:kotlin-test-junit5")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
