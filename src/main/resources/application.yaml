@@ -2,6 +2,12 @@ spring:
   elasticsearch:
     uris: http://localhost:9200
   ai:
+    vectorstore:
+      elasticsearch:
+        initialize-schema: true
+      observations:
+        include-query-response: true
+
     openai:
       api-key: ${SPRING_AI_OPENAI_API_KEY}
       embedding:

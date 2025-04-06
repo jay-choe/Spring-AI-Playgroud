@@ -1,9 +1,7 @@
 package com.playground.playground.pdf
 
-import jakarta.annotation.PostConstruct
 import org.apache.pdfbox.pdmodel.PDDocument
 import org.apache.pdfbox.text.PDFTextStripper
-import org.springframework.core.io.ClassPathResource
 import org.springframework.stereotype.Service
 import java.nio.file.Files
 import java.nio.file.Paths
@@ -28,13 +26,4 @@ class PDFProcessingService {
             }
         }
     }
-
-    @PostConstruct
-    fun postConstruct() {
-        val path = ClassPathResource("/static/kotlin-guide.pdf").url.path
-        val result = process(path, Regex(("(?m)(?=^Item\\s+\\d+:)")), 23)
-
-        println(result)
-    }
-
 }
