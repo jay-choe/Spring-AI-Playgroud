@@ -1,4 +1,4 @@
-package com.playground.batch.model
+package com.playground.batch.job.insertproduct.dto
 
 data class Product(
     val id: Int,
