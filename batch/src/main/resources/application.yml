@@ -1,0 +1,6 @@
+spring:
+  batch:
+    jdbc:
+      initialize-schema: always
+  elasticsearch:
+    uris: http://localhost:9200
