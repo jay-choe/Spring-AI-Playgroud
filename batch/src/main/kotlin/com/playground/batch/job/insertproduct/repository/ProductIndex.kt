@@ -1,11 +1,10 @@
 package com.playground.batch.job.insertproduct.repository
 
 import org.springframework.data.annotation.Id
-import org.springframework.data.elasticsearch.annotations.Document
-import org.springframework.data.elasticsearch.annotations.Field
-import org.springframework.data.elasticsearch.annotations.FieldType
+import org.springframework.data.elasticsearch.annotations.*
+import java.time.Instant
 
-@Document(indexName = "product")
+@Document(indexName = "product", writeTypeHint = WriteTypeHint.FALSE)
 data class ProductIndex(
     @Id
     val id: Int,
@@ -18,5 +17,7 @@ data class ProductIndex(
     @Field(type = FieldType.Text)
     val description: String,
     @Field(type = FieldType.Keyword)
-    val images: List<String>
-)
+    val images: List<String>,
+    @Field(type = FieldType.Date, format = [DateFormat.date_optional_time])
+    val createTime: Instant = Instant.now(),
+    )
